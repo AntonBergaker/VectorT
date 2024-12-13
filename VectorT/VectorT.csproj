@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>VectorT</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Anton Bergåker</Authors>
+		<Title>VectorT</Title>
+		<Description>
+			Tiny library providing a generic Vector2 and Vector3 implementation using the INumber interface added in .NET 7.
+		</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/AntonBergaker/VectorT</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/AntonBergaker/VectorT</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
+
+
+</Project>
