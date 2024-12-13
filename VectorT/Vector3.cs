@@ -48,7 +48,7 @@ public readonly struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
     /// <param name="rhs"></param>
     /// <returns></returns>
     public static Vector3<T> operator +(Vector3<T> lhs, Vector3<T> rhs) {
-        return new(lhs.X + rhs.X, lhs.X + rhs.X, lhs.Z + rhs.Z);
+        return new(lhs.X + rhs.X, lhs.Y + rhs.Y, lhs.Z + rhs.Z);
     }
 
     /// <summary>
@@ -58,7 +58,7 @@ public readonly struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
     /// <param name="rhs"></param>
     /// <returns></returns>
     public static Vector3<T> operator -(Vector3<T> lhs, Vector3<T> rhs) {
-        return new(lhs.X - rhs.X, lhs.X - rhs.X, lhs.Z - rhs.Z);
+        return new(lhs.X - rhs.X, lhs.Y - rhs.Y, lhs.Z - rhs.Z);
     }
     
     /// <summary>
@@ -68,7 +68,7 @@ public readonly struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
     /// <param name="rhs"></param>
     /// <returns></returns>
     public static Vector3<T> operator *(Vector3<T> lhs, Vector3<T> rhs) {
-        return new(lhs.X * rhs.X, lhs.X * rhs.X, lhs.Z * rhs.Z);
+        return new(lhs.X * rhs.X, lhs.Y * rhs.Y, lhs.Z * rhs.Z);
     }
     /// <summary>
     /// Performs a memberwise division.
@@ -77,7 +77,7 @@ public readonly struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
     /// <param name="rhs"></param>
     /// <returns></returns>
     public static Vector3<T> operator /(Vector3<T> lhs, Vector3<T> rhs) {
-        return new(lhs.X / rhs.X, lhs.X / rhs.X, lhs.Z / rhs.Z);
+        return new(lhs.X / rhs.X, lhs.Y / rhs.Y, lhs.Z / rhs.Z);
     }
     
     /// <summary>
