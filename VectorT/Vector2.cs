@@ -3,9 +3,9 @@ using System.Numerics;
 
 namespace VectorT;
 
-public readonly struct Vector2<T> : IEquatable<Vector2<T>> where T: INumber<T> {
-    public readonly T X;
-    public readonly T Y;
+public struct Vector2<T> : IEquatable<Vector2<T>> where T: INumber<T> {
+    public T X { get; set; }
+    public T Y { get; set; }
 
     public Vector2(T x, T y) {
         X = x;
@@ -17,12 +17,12 @@ public readonly struct Vector2<T> : IEquatable<Vector2<T>> where T: INumber<T> {
         Y = scalar;
     }
 
-    public void Deconstruct(out T x, out T y) {
+    public readonly void Deconstruct(out T x, out T y) {
         x = X;
         y = Y;
     }
 
-    public T this[int index] {
+    public readonly T this[int index] {
         get => index switch {
             0 => X,
             1 => Y,
@@ -119,21 +119,21 @@ public readonly struct Vector2<T> : IEquatable<Vector2<T>> where T: INumber<T> {
         return lhs.X != rhs.X || lhs.Y != rhs.Y;
     }
 
-    public override bool Equals([NotNullWhen(true)] object? obj) {
+    public readonly override bool Equals([NotNullWhen(true)] object? obj) {
         if (obj is not Vector2<T> other) {
             return false;
         }
         return Equals(other);
     }
-    public bool Equals(Vector2<T> other) {
+    public readonly bool Equals(Vector2<T> other) {
         return this == other;
     }
 
-    public override int GetHashCode() {
+    public readonly override int GetHashCode() {
         return X.GetHashCode() ^ (Y.GetHashCode() << 4);
     }
 
-    public override string ToString() {
+    public readonly override string ToString() {
         return $"({X}, {Y})";
     }
 }

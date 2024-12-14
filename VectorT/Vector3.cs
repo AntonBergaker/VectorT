@@ -3,10 +3,10 @@ using System.Numerics;
 
 namespace VectorT;
 
-public readonly struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
-    public readonly T X;
-    public readonly T Y;
-    public readonly T Z;
+public struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
+    public T X { get; set; }
+    public T Y { get; set; }
+    public T Z { get; set; }
 
     public Vector3(T x, T y, T z) {
         X = x;
@@ -26,13 +26,13 @@ public readonly struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
         Z = z;
     }
 
-    public void Deconstruct(out T x, out T y, out T z) {
+    public readonly void Deconstruct(out T x, out T y, out T z) {
         x = X;
         y = Y;
         z = Z;
     }
 
-    public T this[int index] {
+    public readonly T this[int index] {
         get => index switch {
             0 => X,
             1 => Y,
@@ -130,21 +130,21 @@ public readonly struct Vector3<T> : IEquatable<Vector3<T>> where T: INumber<T> {
         return lhs.X != rhs.X || lhs.Y != rhs.Y || lhs.Z != rhs.Z;
     }
 
-    public override bool Equals([NotNullWhen(true)] object? obj) {
+    public readonly override bool Equals([NotNullWhen(true)] object? obj) {
         if (obj is not Vector3<T> other) {
             return false;
         }
         return Equals(other);
     }
-    public bool Equals(Vector3<T> other) {
+    public readonly bool Equals(Vector3<T> other) {
         return this == other;
     }
 
-    public override int GetHashCode() {
+    public readonly override int GetHashCode() {
         return X.GetHashCode() ^ (Y.GetHashCode() << 4) ^ (Z.GetHashCode() << 8);
     }
 
-    public override string ToString() {
+    public readonly override string ToString() {
         return $"({X}, {Y}, {Z})";
     }
 }
